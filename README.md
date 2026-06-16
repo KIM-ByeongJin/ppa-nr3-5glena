@@ -74,7 +74,9 @@ Copy `cttc-nr-demo.cc` into the `scratch/` directory and run:
 ```
 
 ### 6. Generate event log
-Run the provided scripts to merge trace files and generate the final event log.
+A concise description of how raw ns-3 / 5G-LENA traces are cleaned, merged, and transformed into event logs is available here:
+
+- [Event Log Construction Strategy](docs/event_log_construction.md)
 
 ## Output Files
 | File | Description |
