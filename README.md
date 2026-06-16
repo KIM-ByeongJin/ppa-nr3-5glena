@@ -90,3 +90,4 @@ Run the provided scripts to merge trace files and generate the final event log.
 - This repository currently focuses on event log generation.
 - PPA model training is not yet included.
 - Generated trace `.txt` and `.csv` files are excluded from version control.
+- For details on source-level modifications, see [docs/source_code_modifications.md](docs/source_code_modifications.md).
