@@ -79,9 +79,7 @@ Copy `cttc-nr-demo.cc` into the `scratch/` directory and run:
 After running the ns-3 simulation and generating raw trace files, move `merge_csv.cc`, `generate_eventlog.py` to the repository root and execute the following pipeline.
 
 #### 1. Merge trace files
-The trace merging program is placed in the repository root.
-
-Compile and run it as follows:
+The trace merging program is placed in the repository root. Compile and run it as follows:
 
 ```bash
 g++ merge_csv.cc -o merge_csv
@@ -92,9 +90,7 @@ This step generates the merged trace file:
 - `merged_traces.csv`
 
 #### 2. Generate event log
-The event log generation script is also placed in the repository root.
-
-Run it as follows:
+The event log generation script is also placed in the repository root. Run it as follows:
 
 ```bash
 python3 generate_eventlog.py
