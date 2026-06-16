@@ -24,12 +24,14 @@ ns-3.47/
 ├── scratch/
 scripts/
 data-samples/
+docs/
 ```
 
 - `ns-3.47/patched-modules/`: modified 5G-LENA source files
 - `ns-3.47/scratch/`: simulation code
 - `scripts/`: trace merging and event log generation scripts
 - `data-samples/`: sample merged trace and event log files
+- `docs/`: documentations related to the project
 
 ## Simulation Setup
 - Number of UEs: 10
@@ -74,6 +76,33 @@ Copy `cttc-nr-demo.cc` into the `scratch/` directory and run:
 ```
 
 ### 6. Generate event log
+After running the ns-3 simulation and generating raw trace files, move to the repository root and execute the following pipeline.
+
+#### 1. Merge trace files
+The trace merging program is placed in the repository root.
+
+Compile and run it as follows:
+
+```bash
+g++ merge_csv.cc -o merge_csv
+./merge_csv
+```
+
+This step generates the merged trace file:
+- `merged_traces.csv`
+
+#### 2. Generate event log
+The event log generation script is also placed in the repository root.
+
+Run it as follows:
+
+```bash
+python3 generate_eventlog.py
+```
+
+This step generates the final event log file:
+- `PPM_Event_Log.csv`
+  
 A concise description of how raw ns-3 / 5G-LENA traces are cleaned, merged, and transformed into event logs is available here:
 
 - [Event Log Construction Strategy](docs/event_log_construction.md)
