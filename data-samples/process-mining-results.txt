@@ -1,0 +1,44 @@
+1. Starting Data Loading & Preprocessing
+-> Preprocessing completed. Total events: 287987
+
+2. Diagnosing Data Anomalies (Physical Tx/Rx Inversion)
+-> Total cases reaching RLC Tx/Rx: 23992
+-> Physical Anomaly (Rx -> Tx Inversion) ratio: 55.18%
+
+3. Performing Process Discovery (Inductive Miner)
+-> Process model derived successfully.
+-> Process map image generated. Displaying below:
+
+4. Performing Conformance Checking (Fitness & Precision)
+-> Average Model Fitness: 0.9820
+-> Model Precision: 0.7072
+
+5. Performing Performance Analysis (Bottleneck Identification) (상위 10개 구간을 보여주도록 설정함)
+-> Top 5 bottlenecks (Average waiting time in seconds):
+   [Admission_Accept] ➔ [DL_PDCP_Enqueue] : Average 0.6823 sec
+   [Admission_Accept] ➔ [DL_Resource_Allocation] : Average 0.6355 sec
+   [DL_RLC_Tx] ➔ [DL_Data_Received] : Average 0.1836 sec
+   [DL_RLC_Rx] ➔ [DL_Data_Received] : Average 0.1817 sec
+   [DL_PDCP_Enqueue] ➔ [DL_Data_Failed] : Average 0.1000 sec
+   [DL_RLC_Rx] ➔ [DL_Data_Failed] : Average 0.0998 sec
+   [DL_RLC_Tx] ➔ [DL_Data_Failed] : Average 0.0998 sec
+   [DL_Resource_Allocation] ➔ [DL_PDCP_Enqueue] : Average 0.0486 sec
+   [DL_Resource_Allocation] ➔ [DL_Data_Received] : Average 0.0040 sec
+   [DL_Data_Received] ➔ [DL_PDCP_Enqueue] : Average 0.0036 sec
+
+6. Analyzing Process Variants (Success vs. Failure Paths) (모든 이탈 경로를 보이게 설정함)
+
+[Top Happy Paths (Successful Cases)]
+   - 52.23% : Admission_Request ➔ Admission_Accept ➔ DL_Resource_Allocation ➔ DL_PDCP_Enqueue ➔ DL_RLC_Rx ➔ DL_RLC_Tx ➔ DL_Data_Received
+   - 42.30% : Admission_Request ➔ Admission_Accept ➔ DL_Resource_Allocation ➔ DL_PDCP_Enqueue ➔ DL_RLC_Tx ➔ DL_RLC_Rx ➔ DL_Data_Received
+   - 2.78% : Admission_Request ➔ Admission_Accept ➔ DL_Resource_Allocation ➔ DL_Data_Received ➔ DL_PDCP_Enqueue ➔ DL_RLC_Rx ➔ DL_RLC_Tx
+   - 2.27% : Admission_Request ➔ Admission_Accept ➔ DL_Resource_Allocation ➔ DL_Data_Received ➔ DL_PDCP_Enqueue ➔ DL_RLC_Tx ➔ DL_RLC_Rx
+   - 0.35% : Admission_Request ➔ Admission_Accept ➔ DL_PDCP_Enqueue ➔ DL_RLC_Tx ➔ DL_Resource_Allocation ➔ DL_RLC_Rx ➔ DL_Data_Received
+   - 0.08% : Admission_Request ➔ Admission_Accept ➔ DL_Resource_Allocation ➔ DL_PDCP_Enqueue ➔ DL_RLC_Rx ➔ DL_Data_Received ➔ DL_RLC_Tx
+
+[Top Failed Paths (Failed Cases)]
+   - 66.95% : Admission_Request ➔ Admission_Accept ➔ DL_PDCP_Enqueue ➔ DL_Data_Failed
+   - 18.25% : Admission_Request ➔ Admission_Accept ➔ DL_Resource_Allocation ➔ DL_PDCP_Enqueue ➔ DL_RLC_Rx ➔ DL_RLC_Tx ➔ DL_Data_Failed
+   - 14.79% : Admission_Request ➔ Admission_Accept ➔ DL_Resource_Allocation ➔ DL_PDCP_Enqueue ➔ DL_RLC_Tx ➔ DL_RLC_Rx ➔ DL_Data_Failed
+   - 0.01% : Admission_Request ➔ Admission_Accept ➔ DL_Resource_Allocation ➔ DL_PDCP_Enqueue ➔ DL_Data_Failed
+   - 0.01% : Admission_Request ➔ Admission_Accept ➔ DL_Resource_Allocation ➔ DL_PDCP_Enqueue ➔ DL_RLC_Rx ➔ DL_Data_Failed
